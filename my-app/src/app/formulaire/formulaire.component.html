@@ -9,7 +9,7 @@
 <div>{{ nom }}</div> -->
 <!-- <div>{{ resul t}}</div> -->
 
-<form #monForm="ngForm">
+<form #monForm=ngForm (ngSubmit)=ajouterPersonnes()>
     <div>
         <div class="form-group">
             <label for="nom">Nom :</label>
@@ -28,11 +28,16 @@
         </div>
     </div>
 </form>
-
-<hr />
+<hr>
 <div>Résultats</div>
-<div>Nom : {{personne.nom}}</div>
-<div>Prenom : {{personne.prenom}}</div>
+<div>
+    <ul>
+        <li *ngFor="let personne of personnes.reverse();">
+            Nom : {{ personne.nom}} / Prenom : {{personne.prenom}}
+        </li>
+    </ul>
+</div>
+
 
 
 
