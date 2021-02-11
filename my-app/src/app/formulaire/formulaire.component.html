@@ -22,15 +22,17 @@
             <div [hidden]="prenom.valid || prenom.pristine">Le prenom est obligatoire</div>
         </div>
         <div>
-            <button [disabled]="!monForm.valid">
-                Ajouter
-            </button>
+            <p>
+                <button [disabled]="!monForm.valid">
+                    Ajouter
+                </button>
+            </p>
         </div>
     </div>
 </form>
-<hr>
-<div>Résultats</div>
-<div>
+
+<div *ngIf="personnes.length > 0">
+    <h4>Résultats</h4>
     <ul>
         <li *ngFor="let personne of personnes.reverse();">
             Nom : {{ personne.nom}} / Prenom : {{personne.prenom}}
