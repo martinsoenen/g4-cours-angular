@@ -9,6 +9,7 @@ import { Personne } from '../interfaces/personne';
 export class FormulaireComponent implements OnInit {
   nom = '';
   result = '';
+  personnes: Array<Personne> = [];
   personne: Personne = {};
 
   constructor() {}
@@ -18,5 +19,11 @@ export class FormulaireComponent implements OnInit {
     // if (nom) this.result = 'Bonjour ' + nom + ' !';
     // this.result = this.nom;
     // console.log('Bonjour tous le monde !');
+  }
+  ajouterPersonnes(): void {
+    this.personnes.push({ ...this.personne });
+    this.personne.nom = '';
+    this.personne.prenom = '';
+    console.log(this.personnes);
   }
 }
