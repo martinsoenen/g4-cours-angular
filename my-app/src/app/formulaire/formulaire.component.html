@@ -1,0 +1,28 @@
+<p>Formulaire works!</p>
+<!-- <div>
+  <label for="nom">Veuillez saisir votre nom</label>
+  <input type="text" name="nom" [(ngModel)]=nom >
+</div>
+<div>
+  <button (click)='direBonjour()'>Valider</button>
+</div>
+<div>{{ nom }}</div> -->
+<!-- <div>{{ resul t}}</div> -->
+
+<form #monForm="ngForm">
+  <div>
+      <label for="nom">Nom :</label>
+      <div><input type="text" name="nom" [(ngModel)]="personne.nom" required #nom /></div>
+      <!-- {{ nom.className }} -->
+      <div><label for="prenom">Prénom :</label></div>
+      <div><input type="text" name="prenom" [(ngModel)]="personne.prenom" required #prenom /></div>
+      <!-- {{ prenom.className }} -->
+      <div>
+          <button [disabled]="!monForm.valid">
+              Ajouter
+          </button>
+      </div>
+  </div>
+</form>
+
+
