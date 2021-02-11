@@ -16,7 +16,7 @@ export class FormulaireComponent implements OnInit {
   ngOnInit(): void {}
   direBonjour() {
     // if (nom) this.result = 'Bonjour ' + nom + ' !';
-    this.result = this.nom;
-    console.log('Bonjour tous le monde !');
+    // this.result = this.nom;
+    // console.log('Bonjour tous le monde !');
   }
 }
