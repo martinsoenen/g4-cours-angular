@@ -33,3 +33,9 @@
     <button [disabled]="!monForm.valid">Ajouter</button>
   </div>
 </form>
+
+<div>
+  <ul>
+    <li *ngFor="let personne of personnes.reverse()">{{personne.nom}} {{personne.prenom}}</li>
+  </ul>
+</div>
