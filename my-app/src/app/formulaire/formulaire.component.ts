@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Personne } from '../interfaces/personne';
 
 @Component({
   selector: 'app-formulaire',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulaireComponent implements OnInit {
 
-  constructor() { }
+	result = "";
 
-  ngOnInit(): void {
-  }
+	personnes: Array<Personne> = [];
+	personne: Personne = {};
+
+	constructor() { }
+
+	ngOnInit(): void {
+	}
+	direBonjour() {
+		console.log('Bonjour !!');
+	}
+	ajouterPersonne(): void{
+		this.personnes.push({... this.personne });
+		this.personne.nom = '';
+		this.personne.prenom = '';
+		console.log(this.personnes);
+	}
 
 }
