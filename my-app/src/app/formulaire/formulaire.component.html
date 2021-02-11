@@ -1,13 +1,35 @@
 <p>formulaire works!</p>
 
+<div style="margin: 20px 0px">--------------------------</div>
+
 <div>
-  <input type="text" #nom>
+  <input type="text" [(ngModel)]=result>
 </div>
 
 <div>
-  <button (click)="direBonjour(nom.value)">Cliquer</button>
+  <button (click)="direBonjour()">Cliquer</button>
 </div>
 
 <div>
   Bonjour {{result}}
 </div>
+
+<div style="margin: 20px 0px">--------------------------</div>
+
+<form #monForm=ngForm (ngSubmit)=ajouterPersonnes()>
+  <div>
+    Nom : <input type="text" name="nom" [(ngModel)]="personne.nom" required #nom="ngModel">
+  </div>
+  <div [hidden]="nom.valid || nom.pristine">
+    Le nom est obligatoire.
+  </div>
+  <div>
+    Prénom : <input type="text" name="prenom" [(ngModel)]="personne.prenom" required #prenom="ngModel">
+  </div>
+  <div [hidden]="prenom.valid || prenom.pristine">
+    Le prénom est obligatoire.
+  </div>
+  <div>
+    <button [disabled]="!monForm.valid">Ajouter</button>
+  </div>
+</form>
